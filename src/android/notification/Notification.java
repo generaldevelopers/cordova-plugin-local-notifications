@@ -179,7 +179,8 @@ public class Notification {
             getAlarmMgr().setRepeating(AlarmManager.RTC_WAKEUP,
                     triggerTime, options.getRepeatInterval(), pi);
         } else {
-            getAlarmMgr().set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
+           // getAlarmMgr().set(AlarmManager.RTC_WAKEUP, triggerTime, pi);
+            context.sendBroadcast(intent);
         }
     }
 
